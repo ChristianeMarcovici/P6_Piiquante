@@ -28,18 +28,29 @@ Database : MongoDb Atlas
 
 Packages requis :
 
-npm crypto-js 
-npm dotenv 
-npm express 
-npm fs-extra 
-npm helmet 
-npm jsonwebtoken 
-npm mongoose 
-npm mongoose-unique-validator 
-npm multer 
-npm password-validator 
-npm path 
-npm nodemon 
+npm crypto-js,
+
+npm dotenv,
+
+npm express,
+
+npm fs-extra,
+
+npm helmet,
+
+npm jsonwebtoken,
+
+npm mongoose,
+
+npm mongoose-unique-validator,
+
+npm multer,
+
+npm password-validator,
+
+npm path,
+
+npm nodemon,
 
 ### Spécification :
 

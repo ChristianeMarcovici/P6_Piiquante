@@ -10,7 +10,7 @@ exports.getAllSauces = (req, res, next) => {
     })
     .catch((error) => {
       res.status(400).json({
-        error: error,
+        error: error
       });
     });
 };
@@ -25,7 +25,7 @@ exports.getOneSauce = (req, res, next) => {
 exports.createSauce = (req, res, next) => {
   const sauceObject = JSON.parse(req.body.sauce);
   delete sauceObject._id;
-  console.log(req.body.sauce);
+ 
 
   const sauce = new Sauce({
     ...sauceObject,
@@ -36,7 +36,7 @@ exports.createSauce = (req, res, next) => {
     dislikes: 0,
   });
 
-  console.log(sauce);
+
   sauce
     .save()
     .then(() => {
@@ -101,15 +101,11 @@ exports.deleteSauce = (req, res, next) => {
 
 ////////////////////////////LIKE OR DISLIKE/////////////////////////////////////////////
 exports.likeOrDislikeSauce = (req, res, next) => {
-  console.log("c'est l'userId");
+
   const userId = req.body.userId;
-  console.log(userId);
   const like = req.body.like;
-  console.log("c'est le like");
-  console.log(like);
   const sauceId = req.params.id;
-  console.log("c'est sauceId");
-  console.log(sauceId);
+ 
 
   Sauce.findOne({ _id: sauceId })
     .then((sauce) => {
@@ -124,8 +120,7 @@ exports.likeOrDislikeSauce = (req, res, next) => {
       const userAlreadyLiked =
         likeListen.usersLiked.includes(userId) ||
         likeListen.usersDisliked.includes(userId);
-      console.log("userAlreadyLiked");
-      console.log(userAlreadyLiked);
+      
 
       //Différents cas:
       switch (like) {

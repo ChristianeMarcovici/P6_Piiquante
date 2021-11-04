@@ -35,7 +35,7 @@ exports.signup = (req, res, next) => {
         .save()
         .then(() => res.status(201).json({ message: "Utilisateur créé !" }))
         .catch((error) =>
-          res.status(400).json({ message: "Utilisateur existe déjà !" })
+          res.status(400).json({error})
         );
     })
     .catch((error) => res.status(500).json({ error }));
@@ -56,7 +56,7 @@ exports.login = (req, res, next) => {
         .compare(req.body.password, user.password)
         .then((valid) => {
           if (!valid) {
-            console.log("mot de pass invalide");
+          
             return res
               .status(401)
               .json({ message: "Mot de passe incorrect !" });
